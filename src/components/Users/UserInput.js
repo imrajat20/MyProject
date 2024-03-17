@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Card from '../UI/Card';
 import classes from './UserInput.module.css';
 import Button from '../UI/Button';
+import Wrapper from '../Helpers/Wrapper';
 import ErrorMSG from '../UI/ErrorMSG';
 
 
@@ -44,7 +45,7 @@ const UserInput = (props) => {
     };
 
     return (
-        <div>
+        <Wrapper>
             {error && <ErrorMSG title={error.title} message={error.message} onTap={errorHandler}></ErrorMSG>}
             <Card className={classes.input}>
                 <form onSubmit={addUserHandler} className='layout' >
@@ -55,7 +56,7 @@ const UserInput = (props) => {
                     <Button type="submit" >Add User</Button>
                 </form>
             </Card>
-        </div>
+        </Wrapper>
     );
 
 }

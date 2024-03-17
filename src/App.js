@@ -15,10 +15,10 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <React.Fragment className="App">
       <UserInput onUserInput={userInputHandler}></UserInput>
       <UserList users={userList}></UserList>
-    </div>
+    </React.Fragment>
   );
 }
 
