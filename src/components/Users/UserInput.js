@@ -10,6 +10,7 @@ const UserInput = (props) => {
 
     const [enteredUsername, setUsername] = useState('');
     const [enteredAge, setAge] = useState('');
+    const [enteredCollege, setCollge] = useState('');
     const [error, setError] = useState();
 
     const addUserHandler = event => {
@@ -28,9 +29,10 @@ const UserInput = (props) => {
         });
         return ;
        }
-        props.onUserInput(enteredUsername,enteredAge);
+        props.onUserInput(enteredUsername,enteredAge,enteredCollege);
         setUsername('');
         setAge('');
+        setCollge('');
     }
     const usernameHandler = event => {
         setUsername(event.target.value);
@@ -38,6 +40,10 @@ const UserInput = (props) => {
     const ageHandler = event => {
         setAge(event.target.value);
     }
+    const collegeHandler = event => {
+        setCollge(event.target.value);
+
+    };
     const errorHandler = () => {
 
         setError(null);
@@ -53,6 +59,8 @@ const UserInput = (props) => {
                     <input id='username' type="text" value={enteredUsername} onChange={usernameHandler}></input>
                     <label htmlFor='age'>Age (Years)</label>
                     <input id='age' type="number" value={enteredAge} onChange={ageHandler}></input>
+                    <label htmlFor='college'>College Name</label>
+                    <input id='college' type='text' value={enteredCollege} onChange={collegeHandler}></input>
                     <Button type="submit" >Add User</Button>
                 </form>
             </Card>
